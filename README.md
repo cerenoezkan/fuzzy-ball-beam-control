@@ -1,18 +1,23 @@
 # Fuzzy Logic Control of Ball-and-Beam System
 
-This project presents the design and comparison of two different fuzzy logic controllers
-for the control of a classic **Ball-and-Beam system**, which is an inherently unstable
-nonlinear control problem.
+This project presents the design, implementation, and comparison of two different
+fuzzy logic controllers for the control of a classic **Ball-and-Beam system**, which
+is an inherently unstable nonlinear control problem.
+
+The study was carried out within the scope of the **Fuzzy Logic Applications Course**
+in the Department of Computer Engineering.
+
+---
 
 ## Project Scope
 
 Two fuzzy control approaches are implemented and analyzed:
 
 1. **Intuitive (Rule-Based) Fuzzy Controller**
-   - Rules are manually designed based on human intuition and experience.
+   - Control rules are manually designed based on human intuition and experience.
 
 2. **Model-Based Automatic Fuzzy Controller (PD-Based)**
-   - Rules are generated algorithmically using a simplified PD control model.
+   - Control rules are generated algorithmically using a simplified PD control model.
 
 The main objective of both controllers is to keep the ball balanced at the center
 of the beam (position = 0).
@@ -28,13 +33,14 @@ of the beam (position = 0).
 ### Output
 - **Beam Angle (θ)** ∈ [-1, 1]
 
-All variables are normalized for consistency and control stability.
+All variables are normalized to ensure consistency and stable control behavior.
 
 ---
 
 ## Controller Designs
 
 ### Intuitive Fuzzy Controller
+
 - Membership Functions: Triangular
 - Linguistic Variables:
   - Position: Left – Center – Right
@@ -48,54 +54,56 @@ near the equilibrium point.
 ---
 
 ### Model-Based (PD-Based) Fuzzy Controller
-- Rules are generated automatically
-- Based on the following control effect:
-  
-  **effect = -position - 0.5 × velocity**
 
-- Linguistic Labels: poor, average, good
+- Fuzzy rules are generated automatically
+- Based on the following control effect:
+
+  **effect = −position − 0.5 × velocity**
+
+- Linguistic Labels: Poor – Average – Good
 
 This approach eliminates manual tuning and focuses on fast error correction,
-but may introduce small oscillations around the equilibrium.
+although it may introduce small oscillations around the equilibrium point.
 
 ---
 
 ## Performance Comparison
 
-| Criterion | Intuitive Controller | Model-Based Controller |
-|---------|---------------------|------------------------|
-| Stability | High | Medium |
-| Response Speed | Medium–Fast | Fast |
-| Oscillation | Low | Small oscillations |
-| Noise Sensitivity | Low–Medium | Medium–High |
-| Design Method | Manual | Algorithmic |
+| Criterion            | Intuitive Controller | Model-Based Controller |
+|----------------------|---------------------|------------------------|
+| Stability            | High                | Medium                 |
+| Response Speed       | Medium–Fast         | Fast                   |
+| Oscillation          | Low                 | Small oscillations     |
+| Noise Sensitivity    | Low–Medium          | Medium–High            |
+| Design Method        | Manual              | Algorithmic            |
 
 ---
 
 ## Simulation Results
 
-### Intuitive Fuzzy Controller
-![Intuitive Controller](figures/intuitive_response.png)
+### Intuitive Fuzzy Controller Response
+![Intuitive Response](figures/intuitive_response.png)
 
-### Model-Based Fuzzy Controller
-![Model-Based Controller](figures/model_based_response.png)
+### Model-Based Fuzzy Controller Response
+![Model-Based Response](figures/model_based_response.png)
 
-### Control Signal Comparison
-![Control Signal](figures/control_signal_comparison.png)
-
-### Ball Position Comparison
-![Ball Position](figures/ball_position_comparison.png)
+### Control Signal and Ball Position Comparison
+The figure below presents a combined comparison of control signals and ball position
+responses for both intuitive and model-based fuzzy controllers.
+![Control and Position Comparison](figures/control_and_position_comparison.png)
 
 ---
 
 ## Conclusion
 
 The intuitive fuzzy controller provides smoother and more human-like responses,
-while the model-based fuzzy controller achieves faster convergence using analytical
-rule generation.
+while the model-based fuzzy controller achieves faster convergence through
+analytical rule generation.
 
-Both controllers demonstrate that fuzzy logic is an effective control strategy
-for unstable nonlinear systems such as the Ball-and-Beam system.
+Both controllers demonstrate that fuzzy logic is an effective and robust control
+strategy for unstable nonlinear systems such as the Ball-and-Beam system.
 
 ---
 
+Department of Computer Engineering  
+Fuzzy Logic Applications Course
