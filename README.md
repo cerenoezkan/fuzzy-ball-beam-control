@@ -99,6 +99,3 @@ for unstable nonlinear systems such as the Ball-and-Beam system.
 
 ---
 
-
-Department of Computer Engineering  
-Fuzzy Logic Applications Course
